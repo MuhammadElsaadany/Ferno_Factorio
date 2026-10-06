@@ -7,5 +7,5 @@
   "dependencies":
   ["base >= 2.0",
   "space-age >= 2.0"],
-  "description": "A small solution when you have too much pollution."
+  "description": "A small solution when you have too much pollution. (Adds a Gun Turret with much higher attack speed and range, with infinite ammo)"
 }
