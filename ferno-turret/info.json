@@ -1,0 +1,11 @@
+{
+  "name": "ferno-turret",
+  "version": "0.1.0",
+  "title": "Ferno Turret",
+  "author": "Ferno",
+  "factorio_version": "2.0",
+  "dependencies":
+  ["base >= 2.0",
+  "space-age >= 2.0"],
+  "description": "A small solution when you have too much pollution."
+}
