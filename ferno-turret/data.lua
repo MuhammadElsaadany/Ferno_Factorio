@@ -1,34 +1,34 @@
-local ferno_turret = table.deepcopy(data.raw["ammo-turret"]["rocket-turret"])
+local ferno_turret_prototype = table.deepcopy(data.raw["ammo-turret"]["gun-turret"])
 
-ferno_turret.name = "ferno-turret"
-ferno_turret.icons = {
+ferno_turret_prototype.name = "ferno-turret"
+ferno_turret_prototype.icons = {
   {
-    icon = ferno_turret.icon,
-    icon_size = ferno_turret.icon_size,
+    icon = ferno_turret_prototype.icon,
+    icon_size = ferno_turret_prototype.icon_size,
     tint = {r=1,g=0,b=0,a=0.3}
   },
 }
 
-ferno_turret.attack_parameters.range = 1000
-ferno_turret.attack_parameters.ammo_consumption_modifier = 0
---ferno_turret.attack_parameters.cooldown = 6
---ferno_turret.attack_parameters.min_range = 0
-ferno_turret.max_health = 100000
-ferno_turret.healing_per_tick = 100000
-ferno_turret.minable.result = "ferno-turret"
+ferno_turret_prototype.attack_parameters.range = 1000
+ferno_turret_prototype.attack_parameters.ammo_consumption_modifier = 0
+ferno_turret_prototype.attack_parameters.cooldown = 0.05
+--ferno_turret_prototype.attack_parameters.min_range = 0
+ferno_turret_prototype.max_health = 100000
+ferno_turret_prototype.healing_per_tick = 100000
+ferno_turret_prototype.minable.result = "ferno-turret"
 
 --
-local ferno_turret_usable = table.deepcopy(data.raw["item"]["rocket-turret"])
+local ferno_turret_usable_entity = table.deepcopy(data.raw["item"]["gun-turret"])
 
-ferno_turret_usable.name = "ferno-turret"
-ferno_turret_usable.icons = {
+ferno_turret_usable_entity.name = "ferno-turret"
+ferno_turret_usable_entity.icons = {
   {
-    icon = ferno_turret.icon,
-    icon_size = ferno_turret.icon_size,
+    icon = ferno_turret_prototype.icon,
+    icon_size = ferno_turret_prototype.icon_size,
     tint = {r=1,g=0,b=0,a=0.3}
   },
 }
-ferno_turret_usable.place_result = "ferno-turret"
+ferno_turret_usable_entity.place_result = "ferno-turret"
 
 
 
@@ -45,4 +45,4 @@ local recipe = {
   results = {{type = "item", name = "ferno-turret", amount = 1}}
 }
 
-data:extend{ferno_turret, ferno_turret_usable, recipe}
+data:extend{ferno_turret_prototype, ferno_turret_usable_entity, recipe}
