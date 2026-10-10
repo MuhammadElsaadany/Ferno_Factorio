@@ -18,17 +18,17 @@ ferno_turret_prototype.healing_per_tick = 100000
 ferno_turret_prototype.minable.result = "ferno-turret"
 
 --
-local ferno_turret_usable_entity = table.deepcopy(data.raw["item"]["gun-turret"])
+local ferno_turret_item = table.deepcopy(data.raw["item"]["gun-turret"])
 
-ferno_turret_usable_entity.name = "ferno-turret"
-ferno_turret_usable_entity.icons = {
+ferno_turret_item.name = "ferno-turret"
+ferno_turret_item.icons = {
   {
     icon = ferno_turret_prototype.icon,
     icon_size = ferno_turret_prototype.icon_size,
     tint = {r=1,g=0,b=0,a=0.3}
   },
 }
-ferno_turret_usable_entity.place_result = "ferno-turret"
+ferno_turret_item.place_result = "ferno-turret"
 
 
 
@@ -45,4 +45,4 @@ local recipe = {
   results = {{type = "item", name = "ferno-turret", amount = 1}}
 }
 
-data:extend{ferno_turret_prototype, ferno_turret_usable_entity, recipe}
+data:extend{ferno_turret_prototype, ferno_turret_item, recipe}
