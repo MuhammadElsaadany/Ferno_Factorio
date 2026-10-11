@@ -1,10 +1,10 @@
 -------------------- THE PROTOTYPE --------------------
-local violence_battery_prototype = table.deepcopy(data.raw["electric-energy-interface"]["electric-energy-interface"])
+local violence_battery_prototype = table.deepcopy(data.raw["accumulator"]["accumulator"])
 
 violence_battery_prototype.name = "violence-battery"
 violence_battery_prototype.icons = {
   {
-    icon = "__base__/graphics/icons/accumulator.png",
+    icon = violence_battery_prototype.icon,
     tint = {r=0,g=0.5,b=0.5,a=0.3}
   },
 }
@@ -17,20 +17,17 @@ violence_battery_prototype.energy_source =
   input_flow_limit = "0W",
   output_flow_limit = "1QW"
 }
-violence_battery_prototype.energy_production = "500kW"
-violence_battery_prototype.energy_usage = "0W"
-violence_battery_prototype.gui_mode= "none"
 violence_battery_prototype.minable.result = "violence-battery"
 
 
 
 -------------------- THE ITEM --------------------
-local violence_battery_item = table.deepcopy(data.raw["item"]["electric-energy-interface"])
+local violence_battery_item = table.deepcopy(data.raw["item"]["accumulator"])
 
 violence_battery_item.name = "violence-battery"
 violence_battery_item.icons = {
   {
-    icon = "__base__/graphics/icons/accumulator.png",
+    icon = violence_battery_prototype.icon,
     tint = {r=0,g=0.5,b=0.5,a=0.3}
   },
 }
