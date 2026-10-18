@@ -1,4 +1,3 @@
----@diagnostic disable: param-type-mismatch
 local ferno_nuke_prototype = table.deepcopy(data.raw["ammo"]["atomic-bomb"])
 
 ferno_nuke_prototype.name = "ferno-nuke"
