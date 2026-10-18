@@ -82,3 +82,4 @@ end)
 
 
 -- add visible "active" radius so people know how to work with it
+-- address the dupe issue, and also the recipe/science costs

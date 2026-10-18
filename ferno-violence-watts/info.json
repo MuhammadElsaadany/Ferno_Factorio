@@ -6,5 +6,5 @@
   "factorio_version": "2.0",
   "dependencies":
   ["base >= 2.0"],
-  "description": "A small solution when you have too much pollution."
+  "description": "A small solution when you have too much pollution. (Adds a huge-buffer battery that generates electricity from player-to-enemy damage dealt around it)"
 }
