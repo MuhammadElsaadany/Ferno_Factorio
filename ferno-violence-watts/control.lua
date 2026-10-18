@@ -62,7 +62,7 @@ script.on_event(defines.events.on_entity_damaged, function(event) -- need to fil
     if not event.force or event.entity.force.name ~= "enemy" or event.force.name ~= "player" then return end
     if not storage.violence_batteries then return end
 
-    local energy_scale = event.final_damage_amount / 10 -- make this into mod settings too
+    local energy_scale = event.final_damage_amount * 30000 -- make this into mod settings too
     local position = event.entity.position
     local surface_index = event.entity.surface_index
 
@@ -78,3 +78,7 @@ script.on_event(defines.events.on_entity_damaged, function(event) -- need to fil
         end
     end
 end)
+
+
+
+-- add visible "active" radius so people know how to work with it

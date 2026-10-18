@@ -12,7 +12,8 @@ violence_battery_prototype.energy_source = {
 	buffer_capacity = "1QJ",
 	usage_priority = "primary-output",
 	input_flow_limit = "0W",
-	output_flow_limit = "1QW"}
+	output_flow_limit = "1QW"
+}
 
 violence_battery_prototype.minable.result = "violence-battery"
 
