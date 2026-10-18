@@ -9,7 +9,7 @@ violence_battery_prototype.icons = {{
 
 violence_battery_prototype.energy_source = {
 	type = "electric",
-	buffer_capacity = "1QJ",
+	buffer_capacity = "1QJ", -- equals 1e30
 	usage_priority = "primary-output",
 	input_flow_limit = "0W",
 	output_flow_limit = "1QW"
