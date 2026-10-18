@@ -6,5 +6,5 @@
   "factorio_version": "2.0",
   "dependencies":
   ["base >= 2.0"],
-  "description": "TBA"
+  "description": "A small solution when you have too much pollution."
 }

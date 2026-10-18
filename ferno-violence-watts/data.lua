@@ -19,8 +19,6 @@ violence_battery_prototype.energy_source =
 }
 violence_battery_prototype.minable.result = "violence-battery"
 
-
-
 -------------------- THE ITEM --------------------
 local violence_battery_item = table.deepcopy(data.raw["item"]["accumulator"])
 
@@ -32,8 +30,6 @@ violence_battery_item.icons = {
   },
 }
 violence_battery_item.place_result = "violence-battery"
-
-
 
 -------------------- THE RECIPE --------------------
 local recipe = {
