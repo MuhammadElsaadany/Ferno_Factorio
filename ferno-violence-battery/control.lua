@@ -21,12 +21,12 @@ script.on_configuration_changed(function(data)
 end)
 
 
-local radius = settings.startup["ferno-violence-watts-violence-batteries-radius"].value
+local radius = settings.startup["ferno-violence-battery-violence-batteries-radius"].value
 if type(radius) ~= "number" then return end
 
 local radius_squared = radius * radius
 
-local efficiency = settings.startup["ferno-violence-watts-violence-batteries-efficiency"].value
+local efficiency = settings.startup["ferno-violence-battery-violence-batteries-efficiency"].value
 if type(efficiency) ~= "number" then return end
 
 
