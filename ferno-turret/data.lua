@@ -9,11 +9,12 @@ ferno_turret_prototype.icons = {
 	},
 }
 
-ferno_turret_prototype.attack_parameters.range = 1000
+local turret_range = settings.startup["ferno-turret-turret-range"].value
+if type(turret_range) ~= "number" then return end
+
+ferno_turret_prototype.attack_parameters.range = turret_range
 ferno_turret_prototype.attack_parameters.ammo_consumption_modifier = 0
 ferno_turret_prototype.attack_parameters.cooldown = 0.05
-ferno_turret_prototype.max_health = 100000
-ferno_turret_prototype.healing_per_tick = 100000
 ferno_turret_prototype.minable.result = "ferno-turret"
 
 --
@@ -35,13 +36,16 @@ ferno_turret_item.place_result = "ferno-turret"
 local recipe = {
 	type = "recipe",
 	name = "ferno-turret",
-	enabled = true,
-	energy_required = 1,
+	enabled = false,
+	energy_required = 60,
 	ingredients = {
-		{type = "item", name = "copper-plate", amount = 200},
-		{type = "item", name = "steel-plate", amount = 50}
+		{type = "item", name = "copper-plate", amount = 50},
+		{type = "item", name = "iron-plate", amount = 200}
   	},
 	results = {{type = "item", name = "ferno-turret", amount = 1}}
 }
+
+table.insert(data.raw.technology["gun-turret"].effects,
+	{ type = "unlock-recipe", recipe = "ferno-turret" })
 
 data:extend{ferno_turret_prototype, ferno_turret_item, recipe}
