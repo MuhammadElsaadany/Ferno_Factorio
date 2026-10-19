@@ -20,8 +20,15 @@ script.on_configuration_changed(function(data)
     scan_existing()
 end)
 
-local max_distance = 1000 -- will un-hardcode it later to make it into mod settings!
-local max_distance_squared = max_distance * max_distance
+
+local radius = settings.startup["ferno-violence-watts-violence-batteries-radius"].value
+if type(radius) ~= "number" then return end
+
+local radius_squared = radius * radius
+
+local efficiency = settings.startup["ferno-violence-watts-violence-batteries-efficiency"].value
+if type(efficiency) ~= "number" then return end
+
 
 local build_events = {
     defines.events.on_built_entity,
@@ -62,7 +69,7 @@ script.on_event(defines.events.on_entity_damaged, function(event) -- need to fil
     if not event.force or event.entity.force.name ~= "enemy" or event.force.name ~= "player" then return end
     if not storage.violence_batteries then return end
 
-    local energy_scale = event.final_damage_amount * 30000 -- make this into mod settings too (use 3e26 for quick battery filling)
+    local energy_scale = event.final_damage_amount * efficiency
     local position = event.entity.position
     local surface_index = event.entity.surface_index
     local valid_batteries = {}
@@ -74,7 +81,7 @@ script.on_event(defines.events.on_entity_damaged, function(event) -- need to fil
             if surface_index == battery.surface_index then
                 local dx = position.x - battery.position.x
                 local dy = position.y - battery.position.y
-                if dx*dx + dy*dy <= max_distance_squared then
+                if dx * dx + dy * dy <= radius_squared then
                     if battery.energy < battery.electric_buffer_size then table.insert(valid_batteries, battery) end
                 end
             end
@@ -90,7 +97,20 @@ script.on_event(defines.events.on_entity_damaged, function(event) -- need to fil
     end
 end)
 
-
-
--- add visible "active" radius so people know how to work with it
--- address the recipe/science costs
+script.on_nth_tick(3, function(event)
+  for _, player in pairs(game.connected_players) do
+    local selected = player.selected
+    if selected and selected.valid and selected.name == "violence-battery" then
+        rendering.draw_circle{
+            color = {r=0,g=0.1,b=0.1,a=0.2},
+            radius = radius,
+            width = 10,
+            filled = true,
+            target = selected,
+            surface = selected.surface,
+            players = {player},
+            time_to_live = 3
+        }
+    end
+  end
+end)
