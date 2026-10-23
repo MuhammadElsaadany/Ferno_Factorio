@@ -15,12 +15,11 @@ violence_battery_prototype.energy_source = {
 	output_flow_limit = "1QW"
 }
 
-local radius_value = tostring(settings.startup["ferno-violence-battery-violence-batteries-radius"].value)
 local efficiency_value = {"", tostring(settings.startup["ferno-violence-battery-violence-batteries-efficiency"].value), "%"}
 
 violence_battery_prototype.custom_tooltip_fields = {
-	{ name = {"tooltip-category.radius-label"}, value = radius_value, order = 1, quality_header = nil, quality_values = nil, show_in_factoriopedia = true, show_in_tooltip = true},
-	{ name = {"tooltip-category.efficiency-label"}, value = efficiency_value, order = 2, quality_header = nil, quality_values = nil, show_in_factoriopedia = true, show_in_tooltip = true}
+	{ name = {"tooltip-category.efficiency-label"}, value = efficiency_value, order = 1, quality_header = nil, quality_values = nil, show_in_factoriopedia = true, show_in_tooltip = true},
+	{ name = {"tooltip-category.radius-label"}, value = "Global", order = 2, quality_header = nil, quality_values = nil, show_in_factoriopedia = true, show_in_tooltip = true}
 }
 
 violence_battery_prototype.minable.result = "violence-battery"

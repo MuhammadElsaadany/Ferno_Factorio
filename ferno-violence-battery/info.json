@@ -1,10 +1,10 @@
 {
   "name": "ferno-violence-battery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Ferno Violence Battery",
   "author": "FernoSoul",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "dependencies":
-  ["base >= 2.0"],
-  "description": "A small solution when you have too much pollution. (Adds a huge-buffer battery that generates electricity based on how much player-to-enemy damage is dealt around it)"
+  ["base >= 2.1"],
+  "description": "Adds a battery that charges up as you deal damage to enemies. (works with modded weapons/turrets/enemies)"
 }
